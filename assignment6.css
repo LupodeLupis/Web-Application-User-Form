@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#job {
+    background: #F00;
+    color: #FFF;
+    padding: 20px 20px 5px 20px;
+    margin: 0;
+    width: 800px;
+    margin: auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    
+}
+
+#job h1 {
+    margin: auto;
+    width: 800px
+}
+
+#account h1, #account h3 {
+    margin: 25px auto;
+    width: 800px
+}
+#account h3 {
+    color: #F00;
+    margin: 15px auto;
+}
+
+.table {
+    text-align: center;
+    margin: auto;
+    position: relative;
+    width: 800px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 16px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    background-color: rgba(245, 238, 245, 0.863);
+    padding: 1px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 50px;
+    border-radius: 10px
+}
+#buttons {
+    position: relative;
+    width: 800px;
+    margin: auto auto 50px auto;
+    text-align: center;
+}
+#buttons .button {
+    border-radius: 5px;
+    padding: 10px;
+    background: #F00;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    width: 150px;
+}
+.table .header {
+    background-color: rgba(128, 128, 128, 0.233);
+    text-align: left;
+    font-size: 18px;
+    margin: auto;
+    position: relative;
+    padding: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+}
+
+.table .label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+.table:not(#work-experience):not(#attachments) .label::after {
+    content: " *";
+    color: #F00;
+}
+.table#work-experience .label::after, .table#attachments .label::after, .table#education #GraduationDateBlock .label::after {
+    content: ": ";
+}
+.table .input {
+    width: 250px;
+    box-sizing: content-box;
+    margin: 1px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+    padding: 2px;
+}
+.table fieldset.input {
+    position: relative;
+    left: 346px;
+    background: #fff;
+}
+.table fieldset.input ul {
+    padding: 0px;
+    text-align: left;
+}
+.table fieldset.input ul, .table fieldset.input legend {
+    padding: 0;
+    margin: 0px 0px 0px 10px;
+    list-style: none;
+}
+
+.error {
+    color: #f00;
+    font-weight: bold;
+    display: none;
+    margin-top: 10px;
+}
+.has-error .error {
+    display: block;
+}
+.has-error .label {
+    color: #F00;
+}
+

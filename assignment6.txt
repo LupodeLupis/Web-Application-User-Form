@@ -1,0 +1,348 @@
+
+
+function checkCharsInRange(string, leftBound, rightBound) {
+
+	for (var Index = 0; Index < string.length; ++Index)
+		if (string.charAt(Index) >= leftBound && string.charAt(Index) <= rightBound)
+			return true;
+
+	return false;
+}
+
+function checkCharInString(string, char) {
+
+	for (var Index = 0; Index < string.length; ++Index)
+		if (string.charAt(Index) == char)
+			return true;
+
+	return false;
+}
+
+function checkPassword() {
+
+	// Get the input value
+	var password = document.getElementById("Password").value;
+	var passwordRetype = document.getElementById("PasswordRetype").value;
+
+	// If password is less then 8 chars
+	if (password.length < 8)
+		return false;
+
+	// Check if there is at least a number
+	if (!checkCharsInRange(password, "0", "9"))
+		return false;
+
+	// Check if there is at least both upper and lower case characters
+	if (!checkCharsInRange(password, "a", "z") && !checkCharsInRange(password, "A", "Z"))
+		return false;
+
+	return true;
+}
+
+function checkPhoneNumber() {
+
+	// Get the input value
+	var phoneNumber = document.getElementById("Phone").value;
+
+	if (phoneNumber == "")
+		return false;
+
+	// Check the digits
+	for (var Index = 0; Index < phoneNumber.length; ++Index)
+		if ((Index == 3 || Index == 7) && phoneNumber.charAt(Index) != "-")
+			return false
+		else if (phoneNumber.charAt(Index) < "0" && phoneNumber.charAt(Index) > "9")
+			return false;
+
+	return true;
+}
+
+function checkFirstName() {
+
+	// Get the input value
+	var firstName = document.getElementById("FirstName").value;
+
+	if (firstName == "")
+		return false;
+
+	for (var Index = 0; Index < firstName.length; ++Index)
+		if (firstName.charAt(Index) < "A" || firstName.charAt(Index) > "z")
+			if (!(firstName.charAt(Index) == "'" || firstName.charAt(Index) == "-"))
+				return false;
+
+	return true;
+}
+
+function checkLastName() {
+
+	// Get the input value
+	var lastName = document.getElementById("LastName").value;
+
+	if (lastName == "")
+		return false;
+
+	for (var Index = 0; Index < lastName.length; ++Index)
+		if (lastName.charAt(Index) < "A" || lastName.charAt(Index) > "z")
+			if (!(lastName.charAt(Index) == "'" || lastName.charAt(Index) == "-"))
+				return false;
+
+	return true;
+
+}
+
+function checkName() {
+	return checkFirstName() && checkSecondName();
+}
+
+function emailChange() {
+
+	//
+	var email = document.getElementById("Email").value;
+
+	if (email == "" || !checkCharInString(email, "@"))
+	{
+		document.getElementById("EmailBlock").classList.add("has-error");
+		return false;
+	}		
+	else
+	{
+		document.getElementById("EmailBlock").classList.remove("has-error");
+		return true;
+	}
+} 
+
+function passwordchange() {
+	if (!checkPassword())
+	{
+		document.getElementById("PasswordBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("PasswordBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function passwordRetypechange() {
+
+	// Get the input value
+	var password = document.getElementById("Password").value;
+	var passwordRetype = document.getElementById("PasswordRetype").value;
+
+	if (password != passwordRetype || passwordRetype == "" || password == "")
+	{
+		document.getElementById("PasswordRetypeBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("PasswordRetypeBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function firstNameChange() {
+
+	if (!checkFirstName())
+	{
+		document.getElementById("FirstNameBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("FirstNameBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function lastNameChange() {	
+
+	if (!checkLastName())
+	{
+		document.getElementById("LastNameBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("LastNameBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function phoneChange() {
+
+	if (!checkPhoneNumber())
+	{
+		document.getElementById("PhoneBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("PhoneBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function addressChange() {
+
+	//
+	var address = document.getElementById("Address").value;
+
+	if (address == "")
+	{
+		document.getElementById("AddressBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("AddressBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function cityChange() {
+
+	//
+	var city = document.getElementById("Address").value;
+
+	if (city == "")
+	{
+		document.getElementById("CityBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("CityBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function countryChange() {
+
+	//
+	var country = document.getElementById("Country").value;
+
+	if (country == "")
+	{
+		document.getElementById("CountryBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("CountryBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function schoolChange() {
+
+	//
+	var school = document.getElementById("School").value;
+
+	if (school == "")
+	{
+		document.getElementById("SchoolBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("SchoolBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function programChange() {
+
+	//
+	var program = document.getElementById("Program").value;
+
+	if (program == "")
+	{
+		document.getElementById("ProgramBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("ProgramBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function educationChange() {
+
+	//
+	var education = document.getElementById("EducationList").value;
+
+	if (education == "")
+	{
+		document.getElementById("EducationListBlock").classList.add("has-error");
+		return false;
+	}
+	else
+	{
+		document.getElementById("EducationListBlock").classList.remove("has-error");
+		return true;
+	}
+}
+
+function resetForm() {
+
+	 var Errors = document.getElementsByClassName("has-error");
+
+	 for (var i = 0; i < Errors.length; i++) {
+	 	Errors[i].classList.remove("has-error");
+	 }
+}
+
+function formValidation() {
+
+	var isValid = true;
+
+	// Check the email
+	if (!emailChange())
+		isValid = false;
+	
+	// Check the password
+	if (!passwordchange())
+		isValid = false;
+	if (!passwordRetypechange())
+		isValid = false;
+
+	// Check the first and last name
+	if (!firstNameChange())
+		isValid = false;
+	if (!lastNameChange())
+		isValid = false;
+
+	// Check the phone number
+	if (!phoneChange())
+		isValid = false;
+
+	// Check the address
+	if (!addressChange())
+		isValid = false;
+
+	// Check the city 
+	if (!cityChange())
+		isValid = false;
+
+	// Check the country
+	if (!countryChange())
+		isValid = false;
+
+	// Check the school
+	if (!schoolChange())
+		isValid = false;
+
+	// Check the program
+	if (!programChange())
+		isValid = false;
+
+	// Check the education
+	if (!educationChange())
+		isValid = false;
+
+	return isValid;
+}
+

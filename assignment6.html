@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <title>Sign Up</title>
+   <link rel='stylesheet' href='assignment6.css' type='text/css' media='screen'>
+   <script src="assignment6.js"></script>
+</head>
+   
+   <body>
+
+        <div id="job">
+            <h1>JobSearch.com</h1>    
+        </div>
+        
+        <div id="account">
+            <h1>Create Your Account</h1>
+            <h3>* Required information</h3>    
+        </div>
+        
+
+        <form name="signup" id="signup" action="https://httpbin.org/post" method="post" autocomplete="on" onsubmit="return formValidation()">
+            <!-- Basic information portion -->
+            <div id="basic-information" class="table">
+
+                <h2 class="header">Basic information</h2>
+
+                <p id="EmailBlock">
+                   <label for="Email" class="label">Email</label>  
+                   <input class="input" size="30" type="email" name="Email" id="Email" autofocus="autofocus" required="required" onchange="emailChange()"/>
+                   <span class="error">The Email is Invalid </span>
+                </p>
+                <p id="PasswordBlock">
+                    <label for="Password" class="label">Password</label>
+                    <input class="input" size = "30" type="password" name="Password" id="Password" required="required" onchange="passwordchange()" />
+                    <span class="error">Invalid Password</span>
+                </p>
+                <p id="PasswordRetypeBlock">
+                   <label for="PasswordRetype" class="label">Retype Password</label> 
+                   <input class="input" size = "30" type="password" name="PasswordRetype" id="PasswordRetype" required="required" onchange="passwordRetypechange()"/>
+                   <span class="error">Invalid Password.Please type again</span>
+                </p>
+                <p id="FirstNameBlock">
+                    <label for="FirstName" class="label">First Name</label> 
+                    <input class="input" size = "30" type="text" name="FirstName" id="FirstName" required="required" onchange="firstNameChange()" />
+                    <span class="error">Invalid First Name</span>
+                </p>
+                <p id="LastNameBlock">
+                    <label for="LastName" class="label">Last Name</label>  
+                    <input class="input" size = "30" type="text" name="LastName" id="LastName" required="required" onchange="lastNameChange()" />
+                    <span class="error">Invalid Last Name</span>
+                </p>
+                <p id="PhoneBlock">
+                    <label for="Phone" class="label">Phone Number</label>  
+                    <input class="input"  size = "30" type="tel" placeholder="999-999-9999" name="Phone" id="Phone" required="required" onchange="phoneChange()" />
+                    <span class="error">Invaid Phone Number</span>
+                </p>
+                <p id="AddressBlock">
+                    <label for="Address" class="label">Address</label>
+                    <input class="input" size = "30" type="text" name="Address" id="Address" required="required" onchange="addressChange()" />
+                    <span class="error">Invalid Address</span>
+                </p>
+                <p id="CityBlock">
+                    <label for="City" class="label">City</label>   
+                    <input class="input" size = "30" type="text" name="City" id="City" required="required" onchange="cityChange()" />
+                    <span class="error">Invalid City</span>
+                </p>
+                <p>
+                    <label for="Province" class="label">Province</label>                
+                    <select class="input" name="Province" id= "Province">
+                        <optgroup label ="Provinces">
+                            <option value="AB">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="MM">Manitoba</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="NL">Newfoundland</option>
+                            <option value="NS">Nova Scotia</option>
+                            <option value="ON">Ontario</option>
+                            <option value="PE">Prince Edward Island</option>
+                            <option value="QC">Quebec</option>
+                            <option value="SK">Saskatchewan</option>
+                        </optgroup>
+                        <optgroup label ="Territories">
+                            <option value="1">Northwest Territories</option>
+                            <option value="2">Nunavut</option>
+                            <option value="3">Yukon</option>
+                        </optgroup>
+                    </select>     
+                </p>
+                <p id="CountryBlock">
+                    <label class="label">Country</label>
+                    <input class="input" size ="30" type="text" list="Country" name="Country" id="Countries" required="required" onchange="countryChange()" />
+                    <span class="error">Invalid Country</span>
+                    <datalist id = "Country">
+                        <option value="Canada"></option>
+                        <option value="USA"></option>
+                        <option value="Italy"></option>
+                        <option value="Spain"></option>
+                        <option value="United Kingdom"></option>
+                    </datalist>
+                </p>
+            </div>
+
+            <!-- Education portion -->
+            <div id="education" class="table">
+                <h2 class= "header">Education</h2>
+                <p id="SchoolBlock">
+                    <label class="label" for="School">School</label>
+                    <input class="input" type="text" name="School" id="School" required="required" onchange="schoolChange()" />
+                    <span class="error">School not found</span>
+                </p>
+                <p id="ProgramBlock">
+                    <label class="label" for="Program">Program</label>
+                    <input class="input" type="text" name="Program" id="Program" required="required" onchange="programChange()" />
+                    <span class="error">Program not Found</span>
+                </p>
+                <p id="EducationListBlock">
+                    <label class="label" for="EducationList">Education Level</label>
+                    <select class="input" name="EducationList" id="EducationList" onchange="educationChange()" >
+                        <option value="" selected >-select-</option>
+                        <option value="Technical Diploma">Technical Diploma</option>
+                        <option value="College Diploma">College Diploma</option>
+                        <option value="Bachelor's Degree">Bachelor's Degree</option>
+                        <option value="Master's Degree">Master's Degree</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <span class="error">An option from the list has to chosen</span>
+                </p>
+                <fieldset class="input">
+                    <legend>Education Status</legend>
+                    <ul>
+                    <li>
+                        <label for="Status-1"></label>
+                        <input type="radio" name="Status" id="Status-1" value="Graduated"/>Graduated 
+                    </li>
+                    <li>
+                        <label for="Status-2"></label>
+                        <input type="radio" name="Status" id="Status-2" value="Current enrolled"/>Current enrolled
+                    </li>
+                    <li>
+                        <label for="Status-3"></label>
+                        <input type="radio" name="Status" id="Status-3" value="Did not graduate"/>Did not graduate
+                    </li>
+                    </ul>
+                </fieldset>
+                <p id="GraduationDateBlock" >
+                    <label class="label" for="GraduationDate">Graduation Date</label>
+                    <input class="input" type="text" name="GraduationDate" id="GraduationDate" />
+                </p>
+            </div>
+
+            <!-- Work Experience portion -->
+            <div id="work-experience" class="table">
+                <h2 class="header">Work Experience</h2>
+
+                <p>
+                    <label class="label" for="Employer">Employer</label>                
+                    <input class="input" type="text" name="Employer" id="Employer"/>
+                </p>
+                <p>
+                    <label class="label" for="JobTitle">Job Title</label>
+                    <input class="input" type="text" name="JobTitle" id="JobTitle" />
+                </p>
+                <p>
+                    <label class="label" for="JobDuty">Job Duty</label>
+                    <textarea class="input" name="JobDuty" id="JobDuty" cols="30" rows="4"></textarea>
+                </p>
+                <p>
+                    <label class="label" for="WorkedYear">Worked Year</label>
+                    <input class="input" type="number" name="WorkedYear" id="WorkedYear" min="1" max="20"/>
+                </p>            
+            </div>
+
+            <!-- Work Experience portion -->
+            <div id="attachments" class="table">
+                <h2 class="header">Attachments</h2>
+
+                <p>
+                    <label class="label" for="Attachment">Attachment</label>             
+                    <input class="input" type="file" name="Attachment" id="Attachment" multiple="multiple"/>
+                </p>
+            </div>
+
+            <div id="buttons">
+                <input type="reset" class="button" value="Reset" onclick="resetForm()" />
+                <input type="submit" class="button" value="Apply" onclick="formValidation()"/>    
+            </div>
+        </form>
+
+   </body>
